@@ -1,0 +1,61 @@
+
+backend:
+  name: github
+  repo: MGFgzs/the-journey
+  branch: main
+
+site_url: https://animated-kitsune-98e4e2.netlify.app
+display_url: https://animated-kitsune-98e4e2.netlify.app
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "posts"
+    label: "文章管理"
+    label_singular: "文章"
+    folder: "content/posts"
+    create: true
+    extension: "md"
+    format: "frontmatter"
+    slug: "{{slug}}"
+    fields:
+      - label: "文章网址标识"
+        name: "slug"
+        widget: "string"
+        required: true
+      - label: "中文标题"
+        name: "title"
+        widget: "string"
+      - label: "英文标题"
+        name: "title_en"
+        widget: "string"
+      - label: "发布日期"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DDTHH:mm:ssZ"
+      - label: "中文摘要"
+        name: "description"
+        widget: "text"
+      - label: "英文摘要"
+        name: "description_en"
+        widget: "text"
+      - label: "封面图片"
+        name: "cover"
+        widget: "image"
+        required: false
+      - label: "分类"
+        name: "category"
+        widget: "select"
+        options:
+          - "Journal"
+          - "Learning"
+          - "Study Abroad"
+      - label: "中文正文"
+        name: "body"
+        widget: "markdown"
+      - label: "英文正文"
+        name: "body_en"
+        widget: "markdown"
